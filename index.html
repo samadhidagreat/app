@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Property - Skylight Homes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1><i class="fas fa-home"></i> Skylight Homes</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="properties.html" class="active">Properties</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="application-form">
+            <h2>Rental Application</h2>
+            <p>Please complete the form below to apply for <span id="property-title-display">this property</span>.</p>
+            
+            <!-- FormSubmit endpoint -->
+            <form action="https://formsubmit.co/samadhidagreat@gmail.com" method="POST" id="application-form">
+                <!-- FormSubmit options -->
+                <input type="hidden" name="_next" value="https://skylinehomes.superlativeorganics.shop/thank-you.html">
+                <input type="hidden" name="_subject" value="New Skylight Homes Rental Application">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="_honey" style="display:none"> <!-- honeypot -->
+                <input type="hidden" name="_captcha" value="false">
+                
+                <!-- Property context -->
+                <input type="hidden" name="property-id" id="property-id-input" value="">
+                <input type="hidden" name="property-title" id="property-title-input" value="">
+                <input type="hidden" name="form-type" value="rental-application">
+                
+                <div class="form-section">
+                    <h3>Personal Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First Name *</label>
+                            <input type="text" id="first-name" name="first-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name *</label>
+                            <input type="text" id="last-name" name="last-name" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dob">Date of Birth *</label>
+                            <input type="date" id="dob" name="dob" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ssn">Social Security Number (Last 4 digits) *</label>
+                            <input type="text" id="ssn" name="ssn" maxlength="4" pattern="[0-9]{4}" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Current Address</h3>
+                    <div class="form-group">
+                        <label for="current-address">Street Address *</label>
+                        <input type="text" id="current-address" name="current-address" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="current-city">City *</label>
+                            <input type="text" id="current-city" name="current-city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="current-state">State *</label>
+                            <input type="text" id="current-state" name="current-state" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="current-zip">ZIP Code *</label>
+                            <input type="text" id="current-zip" name="current-zip" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="current-duration">How long at this address? *</label>
+                            <input type="text" id="current-duration" name="current-duration" placeholder="e.g., 2 years, 6 months" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="current-rent">Monthly Rent/Mortgage *</label>
+                            <input type="text" id="current-rent" name="current-rent" placeholder="e.g., $1,500" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="landlord-name">Current Landlord/Property Manager Name</label>
+                            <input type="text" id="landlord-name" name="landlord-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="landlord-phone">Landlord/Property Manager Phone</label>
+                            <input type="tel" id="landlord-phone" name="landlord-phone">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reason-for-leaving">Reason for Leaving</label>
+                        <textarea id="reason-for-leaving" name="reason-for-leaving" rows="2"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Employment Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="employer">Current Employer *</label>
+                            <input type="text" id="employer" name="employer" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Position/Title *</label>
+                            <input type="text" id="position" name="position" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="employment-duration">Length of Employment *</label>
+                            <input type="text" id="employment-duration" name="employment-duration" placeholder="e.g., 3 years, 2 months" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="income">Monthly Income *</label>
+                            <input type="text" id="income" name="income" placeholder="e.g., $5,000" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="supervisor-name">Supervisor Name</label>
+                            <input type="text" id="supervisor-name" name="supervisor-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="supervisor-phone">Supervisor Phone</label>
+                            <input type="tel" id="supervisor-phone" name="supervisor-phone">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Additional Occupants</h3>
+                    <p>Please list all additional people who will live in the property.</p>
+                    
+                    <div id="occupants-container">
+                        <div class="occupant-entry">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="occupant-name-1">Full Name</label>
+                                    <input type="text" id="occupant-name-1" name="occupant-name-1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="occupant-relationship-1">Relationship</label>
+                                    <input type="text" id="occupant-relationship-1" name="occupant-relationship-1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="occupant-age-1">Age</label>
+                                    <input type="number" id="occupant-age-1" name="occupant-age-1" min="0">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="button" id="add-occupant" class="btn btn-outline">+ Add Another Occupant</button>
+                </div>
+                
+                <div class="form-section">
+                    <h3>References</h3>
+                    <p>Please provide two personal references (not related to you).</p>
+                    
+                    <div class="reference-entry">
+                        <h4>Reference 1</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reference-name-1">Full Name *</label>
+                                <input type="text" id="reference-name-1" name="reference-name-1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reference-relationship-1">Relationship *</label>
+                                <input type="text" id="reference-relationship-1" name="reference-relationship-1" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reference-phone-1">Phone Number *</label>
+                                <input type="tel" id="reference-phone-1" name="reference-phone-1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reference-email-1">Email</label>
+                                <input type="email" id="reference-email-1" name="reference-email-1">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="reference-entry">
+                        <h4>Reference 2</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reference-name-2">Full Name *</label>
+                                <input type="text" id="reference-name-2" name="reference-name-2" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reference-relationship-2">Relationship *</label>
+                                <input type="text" id="reference-relationship-2" name="reference-relationship-2" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reference-phone-2">Phone Number *</label>
+                                <input type="tel" id="reference-phone-2" name="reference-phone-2" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reference-email-2">Email</label>
+                                <input type="email" id="reference-email-2" name="reference-email-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Additional Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="pets">Do you have any pets?</label>
+                        <select id="pets" name="pets">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </div>
+                    
+                    <div id="pets-details" class="hidden">
+                        <div class="form-group">
+                            <label for="pets-details-text">Please describe your pets (type, breed, weight, age)</label>
+                            <textarea id="pets-details-text" name="pets-details-text" rows="2"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="smoking">Do you smoke?</label>
+                        <select id="smoking" name="smoking">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="evicted">Have you ever been evicted?</label>
+                        <select id="evicted" name="evicted">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </div>
+                    
+                    <div id="evicted-details" class="hidden">
+                        <div class="form-group">
+                            <label for="evicted-details-text">Please explain the circumstances</label>
+                            <textarea id="evicted-details-text" name="evicted-details-text" rows="2"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="convicted">Have you ever been convicted of a felony?</label>
+                        <select id="convicted" name="convicted">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </div>
+                    
+                    <div id="convicted-details" class="hidden">
+                        <div class="form-group">
+                            <label for="convicted-details-text">Please explain the circumstances</label>
+                            <textarea id="convicted-details-text" name="convicted-details-text" rows="2"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="additional-info">Additional Information or Questions</label>
+                        <textarea id="additional-info" name="additional-info" rows="4"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Acknowledgment</h3>
+                    
+                    <div class="form-check">
+                        <input type="checkbox" id="authorization" name="authorization" required>
+                        <label for="authorization">I authorize Skylight Homes to verify all information provided on this application, including employment, income, rental history, and credit history. *</label>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input type="checkbox" id="truthful" name="truthful" required>
+                        <label for="truthful">I certify that all information provided in this application is true and accurate to the best of my knowledge. *</label>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input type="checkbox" id="incomplete" name="incomplete" required>
+                        <label for="incomplete">I understand that incomplete or inaccurate information may result in the rejection of this application. *</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signature">Electronic Signature (Type Full Name) *</label>
+                        <input type="text" id="signature" name="signature" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Date *</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn">Submit Application</button>
+                </div>
+                
+                <div class="form-note">
+                    <p>* Required fields</p>
+                    <p>Note: A $75 non-refundable application fee will be required upon submission of this application. You will receive payment instructions after submitting.</p>
+                    <p>Your privacy is important to us. The information provided will be used solely for the purpose of evaluating your rental application.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Skylight Homes</h3>
+                    <p>Premium real estate services in Chicago, IL. Find your dream home with virtual tours and easy application process.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Michigan Ave, Chicago, IL</p>
+                        <p><i class="fas fa-phone"></i> (773) 676-9933</p>
+                        <p><i class="fas fa-envelope"></i> skylighthomeschicagoil@gmail.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="admin/login.html">Admin Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest property listings and real estate news.</p>
+                    <form action="https://formsubmit.co/samadhidagreat@gmail.com" method="POST">
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                        <input type="hidden" name="_subject" value="Skylight Homes Newsletter Signup">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="_honey" style="display:none">
+                        <input type="hidden" name="form-type" value="newsletter">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Skylight Homes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/apply.js"></script>
+    <script>
+    (function() {
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+        const title = params.get('title');
+        if (id) document.getElementById('property-id-input').value = id;
+        if (title) {
+            document.getElementById('property-title-input').value = title;
+            const span = document.getElementById('property-title-display');
+            if (span) span.textContent = title;
+        }
+    })();
+    </script>
+</body>
+</html>
